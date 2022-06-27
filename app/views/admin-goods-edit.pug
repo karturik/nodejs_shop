@@ -1,0 +1,38 @@
+include header
+
+div(class='row')
+  div(class='col col-md-12')
+    form(action="/goods-edit" method = "POST")
+       div(class='form-control')
+         label Название товара
+         input(
+             type='text',
+             name='name',
+             )
+       div(class='form-control')
+         label Описание товара
+         input(
+             type='text',
+             name='description',
+             )
+       div(class='form-control')
+         label Цена (цифрами)
+         input(
+             type='text',
+             name='cost',
+             )
+       div(class='form-control')
+         label Фото главное
+         input(
+             type='text',
+             name='image',
+             )       
+             
+       div(class='form-control')
+         label Номер модели (цифрой)
+         input(
+             type='text',
+             name='category',
+             )
+       div(class='form-control')
+        button(class='button-primary', type='submit') Редактировать товар             

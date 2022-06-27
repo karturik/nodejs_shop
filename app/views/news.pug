@@ -1,0 +1,42 @@
+include header
+
+div(class='wrap')
+  div(class='content')
+    include navbar
+    div(class="row")
+     div(class='catalog')
+        h1(class="catalog-text") Наши новости        
+    div(class="container") 
+     each val, index in news
+      div(class="news-container")
+        div(class="row")
+          h1(class="news-title") #{val['title']} 
+        div(class="row")
+          span(class="news-date") #{val['date']} 
+        div(class="row")
+          img(
+            src='images/'+val['image']
+            class="news-image"
+             )
+        div(class="row")
+          p(class="news-text") #{val['text']} 
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    div(class='row')
+     button(class="show-nav") <i class="fas fa-shopping-cart"></i>
+
+    include nav
+    include footer
+//link(rel='stylesheet', href='/css/style.css')

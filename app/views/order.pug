@@ -1,0 +1,63 @@
+include header.pug
+
+div(class='wrap')
+  div(class='content')
+    header(class='site-header')
+      include site_header.pug
+    div(class="row")
+      div(class='catalog')
+       h1(class="catalog-text") Заказ  
+    div(class='container')
+      div(class='row')
+        div(class='col col-md-12')
+          h3(class="cart-header") Корзина
+          div(id='cart-nav')
+        div(class='col col-md-12')
+          h3 Данные для заказа: 
+        div(class='col col-md-6')
+          form#lite-shop-order(action="")
+                  div(class='form-control')
+                    label(for='username') Имя и фамилия
+                    input(
+                        type='text',
+                        id='username',
+                        placeholder='Введите имя и фамилию...',
+                        )
+                  div(class='form-control')
+                    label(for='phone') Телефон
+                    input(
+                        type='text',
+                        id='phone',
+                        placeholder='+375XXXXXXXXX',
+                        )
+                  div(class='form-control')
+                    label(for='email') Email
+                    input(
+                        type='text',
+                        id='email',
+                        placeholder='mail@example.com',
+                        )
+                  div(class='form-control')
+                    label(for='address') Адрес и комментраии к заказу
+                    textarea(
+                        id='address',
+                        placeholder='Адрес и комментарий...',
+                        )
+                  div(class='form-control')
+                    label(for='rule') 
+                      input(
+                          type='checkbox',
+                          id='rule',
+                          value='1'
+                          ) 
+                      span  Согласие на обработку персональных данных
+                  div(class='form-control text-right')
+                    button(class='button-primary', type='submit') Совершить заказ
+        div(class="col-md-6")
+         a(class="oplata")
+          <strong><p>ВЫ МОЖЕТЕ ОПЛАТИТЬ ТОВАР ПРИ ПОМОЩИ СИСТЕМЫ ЕРИП</p></strong><p>&nbsp;Оплату Вы можете произвести в любом банке: интернет-банкинге, мобильном банкинге, инфокиоске, банкомате, кассе и т.д.</p><p>&nbsp;Совершить оплату можно с использованием наличных денежных средств, любых электронных денег, банковских платежных карточек.</p><ol start="1" type="1"><li>Чтобы оплатить, необходимо: Интернет-магазины/сервисы &rarr; T &rarr; Tina.by</li><li>Для оплаты "Товара" ввести свой Номер телефона.</li><li>Ввести сумму платежа (если не указана).</li><li>Проверить корректность информации</li><li>Совершить платеж.</li></ol>&nbsp;<p>Если Вы осуществляете платеж в кассе банка, пожалуйста, сообщите кассиру о необходимости проведения платежа через систему &rdquo;Расчет&ldquo; (ЕРИП).</p><p>&nbsp;Техническое взаимодействие с системой "Расчет" (ЕРИП) осуществляется с помощью сервиса &laquo;Экспресс Платежи&raquo;.</p>
+         
+         
+    include footer.pug
+  script(src='js/order.js')
+

@@ -1,0 +1,33 @@
+include header
+
+div(class='wrap')
+  div(class='content')
+    include navbar
+    div(class="row")
+      div(class='catalog')
+       h1(class="catalog-text") Каталог
+    div(class='container')
+      div(class='row')
+        each val2, index2 in cat
+            div(class="col col-lg-12")
+                h2
+                    a(
+                        href='/cat?id='+val2['id']
+                    )   #{val2['category']} 
+            
+            each val, index in goods
+                if val2['id'] == val['category']
+                    include card.pug
+           
+            div(class="col col-lg-12")
+              div(class='more-colors')
+               h2
+                    a( class='button' 
+                        href='/cat?id='+val2['id']
+                    )   больше цветов тут
+                    
+    div(class='row')
+     button(class="show-nav") <i class="fas fa-shopping-cart"></i>
+
+    include nav
+    include footer

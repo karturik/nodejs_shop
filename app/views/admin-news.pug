@@ -1,0 +1,47 @@
+include header
+
+div(class="row")
+ div(class='catalog')
+  h1(class="catalog-text") Добавить новость        
+
+        
+div(class='row')
+  div(class='col col-md-12')        
+     div(class="container")
+         form(action="/admin-news" method="POST")
+          div(class='form-control')
+            label Заголовок
+            input(type='text',
+                  name='title',
+                  placeholder='Введите заголовок...')
+
+          div(class='form-control')
+            label Дата
+            input(name="date",
+                  type="text",
+                  placeholder='Введите дату...')
+
+          div(class='form-control')
+            label Текст
+            input(name="text"
+                  type="text",
+                  placeholder='Введите текст новости...')
+
+          div(class='form-control')
+            label Картинка
+            input(name="image"
+                  type="text",
+                  placeholder='Введите название картинки...')
+
+          div(class='form-control')
+            input(type="submit" value="Отправить")
+
+h1 Удалить новость
+   
+div(class="container") 
+     each val, index in news
+      div(class="news-container")
+        div(class="row")
+          h6 #{val['title']} 
+      form(action="admin-news/"+val['id'] method="POST")
+       input(type="submit" value="Удалить")

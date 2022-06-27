@@ -1,0 +1,23 @@
+include header.pug
+
+div(class='navbar1')
+ div(class="row")
+  div(class="col col-md-1")
+    h1(class="navtextlogo") Tina
+  div(class="col col-md-11")
+     div(class="main-nav" id="js-menu")
+       div(class="col col-md-3")
+        a(class="navtext" href="/") Главная
+       div(class="col col-md-2")
+        a(class="navtext" href="/catalog") Каталог
+       div(class="col col-md-2")
+        a(class="navtext" href="/news") Наши новости
+       div(class="col col-md-2")
+        a(class="navtext" href="/contacts") Контакты
+       div(class="col col-md-2")
+        a(class="navtext" href="/payment") Оплата
+ a(class="navbar-toggle" id="js-navbar-toggle")
+    i(class="fas fa-bars")
+
+link(rel='stylesheet', href='/css/style.css')
+script(src='/js/navbar.js')

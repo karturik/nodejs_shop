@@ -1,0 +1,74 @@
+include header
+
+div(class='row')
+  div(class='col col-md-12')
+    form(method = "POST")
+       div(class='form-control')
+         label Название товара
+         input(
+             type='text',
+             name='name',
+             placeholder='Модель №* (*цвет*)',
+             )
+       div(class='form-control')
+         label Описание товара
+         input(
+             type='text',
+             name='description',
+             placeholder='Описание...',
+             )
+       div(class='form-control')
+         label Цена (цифрами)
+         input(
+             type='text',
+             name='cost',
+             placeholder='111',
+             )
+       div(class='form-control')
+         label Фото главное
+         input(
+             type='text',
+             name='image',
+             placeholder='Имя файла',
+             )       
+             
+       div(class='form-control')
+         label Номер модели (цифрой)
+         input(
+             type='text',
+             name='category',
+             placeholder='Номер модели',
+             )
+       div(class='form-control aa-ok')
+        button(class='button-primary', type='submit') Добавить товар                    
+       div(class='form-control')
+    form(action="category-add/" method="POST")
+      div(class='form-control cat-ok')
+         label Если модели еще нет - сначала создать ее здесь
+         input(
+             type='text',
+             name='category1',
+             value="Модель"
+             ) 
+      button(class='button-primary', type='submit') Создать модель                     
+
+h3 Удалить шапочку
+   
+div(class="flex-container") 
+     each val, index in goods
+      div(class="news-container")
+        div(class="row")
+         div(class="col col-md-2") 
+           img(
+                src='images/'+val['image']
+                class='card-images'
+            )  
+         div(class="col col-md-10") 
+           a(href="goods?id="+val['id']) 
+            h6 #{val['name']} 
+            h6 ID товара: #{val['id']} 
+        form(action="admin-goods-delete/"+val['id'] method="POST")
+         input(type="submit" value="Удалить")
+        a(href="/admin-goods-edit/"+val['id'])
+         input(type="submit" value="Редактировать")
+         

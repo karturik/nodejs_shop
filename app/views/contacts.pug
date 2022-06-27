@@ -1,0 +1,51 @@
+include header
+
+div(class='wrap')
+  div(class='content')
+    include navbar
+    div(class="row")
+     div(class='catalog')
+        h1(class="catalog-text") Контакты        
+    
+    div(class="row")
+     img(src="./images/test.jpg" alt="" class="icon-image")
+    h1 Upload file
+    form(action="/upload" method="post" enctype="multipart/form-data")
+        label Файл
+        input(type="file" name="filedata" accept="image/*" required multiple)
+        input(type="submit" value="Send")
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    div(class='row')
+     button(class="show-nav") <i class="fas fa-shopping-cart"></i>
+
+include nav
+include footer
+link(rel='stylesheet', href='/css/style.css')
+script(src="/js/upload.js")

@@ -1,0 +1,53 @@
+include header
+
+div(class='wrap')
+  div(class='content')
+    include navbar.pug
+    div(class="row")
+      div(class='catalog')
+       h1(class="catalog-text") #{goods[0]['name']}       
+    div(class='container')
+      div(class='row')
+        div(class='col col-md-12')
+            h2(class="panel-title") #{goods[0]['name']}
+            
+      div(class='row')
+        div(class="col col-md-6")
+           div(class="cont-img") 
+            img(
+                src="/images/"+goods[0]['image']
+                href="/images/"+goods[0]['image']
+                class="goods-big-image"
+                data-fancybox="gallery"
+            )
+            
+            div(class='row')
+              div(class='flex-container')
+               each val, index in goods_images
+                img(
+                    src="/images/"+val['path']
+                    href="/images/"+val['path']
+                    class="goods-little-image"
+                    data-fancybox="gallery"
+                   )
+
+        div(class="col col-md-6")
+         div(class="descr-price")
+            p(class="description") #{goods[0]['description']}
+            span(class="price-good-page") Цена: #{goods[0]['cost'].toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$& ')} BLR
+            button(
+                class="button-primary-good add-to-cart"
+                data-goods_id=goods[0]['id']
+            ) В корзину
+      div(class='row')
+       button(class="show-nav") <i class="fas fa-shopping-cart"></i>
+     
+     
+include nav
+     
+script(src='/js/nav.js')
+script(src='/js/card.js')
+script(src='https://code.jquery.com/jquery-3.4.1.min.js')
+script(src='/js/jquery.fancybox.min.js')
+link(rel='stylesheet', href='/css/jquery.fancybox.min.css')
+

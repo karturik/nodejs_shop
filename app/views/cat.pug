@@ -1,0 +1,24 @@
+include header
+
+div(class='wrap')
+  div(class='content')
+    include navbar.pug
+    div(class="row")
+      div(class='catalog')
+       h1(class="catalog-text") #{cat[0]['category']}
+    div(class='container')
+      div(class='row')
+        div(class='col col-md-12')
+          h2(class='cat-title-name') #{cat[0]['category']}
+        each val, index in goods
+          include card.pug
+
+
+
+
+        div(class="description") #{cat[0]['description']}
+    div(class='row')
+     button(class="show-nav") <i class="fas fa-shopping-cart"></i>
+    
+    include nav
+    include footer
